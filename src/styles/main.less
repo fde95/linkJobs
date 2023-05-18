@@ -1,0 +1,137 @@
+@import "mapas.less";
+@breakingpointMobile: ~ "(max-width: 767px)";
+@breakingpointTablet: ~"( min-width: 768px) and (max-width: 1023px)";
+
+.primaryText{
+    color: #colors[primaryText];
+}
+
+.noBullets{
+    list-style: none
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+body{
+    background-color: #colors[backgroundColor];
+}
+
+li{
+    list-style: none;
+}
+
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media @breakingpointTablet {
+        max-width: 90%;
+
+        footer{
+            font-size: .9em;
+        }
+    }
+
+    @media @breakingpointMobile {
+        max-width: 90%;
+        height: 100%;
+        header{
+            margin-top: 30px;
+        }
+        footer{
+            font-size: .7em;
+        }
+    }
+}
+
+header{
+    padding-bottom:20px;
+    .fotoPerfil{
+        max-width: 200px;
+        width: 100%;
+        display: block;
+        border-radius: 50%;
+        margin:0 auto 24px;
+        border: 5px solid #59341E;
+    }
+}
+
+.profileBio{
+    text-align: center;
+    
+
+    &-name{
+        font-size: 1.75em;
+        font-weight: 800;
+        .primaryText();
+    }
+
+    &-sub{
+        font-size: 1.2em;
+        .primaryText();
+    }
+
+    &-desc{
+        margin-top: 10px;
+        color: #colors[secundaryText];
+        padding: 0 40px;
+        font-size: .98em;
+    }
+}
+
+.socialLinks{
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+    li{
+        img{
+            transition: all ease .5s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.projectsList{
+    margin-top: 30px;
+    &-item{
+        a{
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            display: block;
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            color: #colors[backgroundColor];
+            text-align: center;
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+            transition: all ease .5s;
+
+            &:hover{
+                color: #colors[buttonColor];
+                background-color: transparent ;
+            }
+        }
+    }
+}
+
+footer{
+    cursor: default;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #colors[footerColor];
+}
